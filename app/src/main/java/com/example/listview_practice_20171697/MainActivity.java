@@ -2,6 +2,7 @@ package com.example.listview_practice_20171697;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
             "20175980",
             "20175990",
            };
+    //Intent intent0=new Intent(this,details0.class);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,58 +60,19 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
-                    case 0:
-                        //Toast.makeText(getApplicationContext(),"0",Toast.LENGTH_SHORT).show();
-                        break;
-                    case 1:
-                        //Toast.makeText(getApplicationContext(),"1",Toast.LENGTH_SHORT).show();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
-                    case 10:
-                        break;
-                    case 11:
-                        break;
-                    case 12:
-                        break;
-                    case 13:
-                        break;
-                    case 14:
-                        break;
-                    case 15:
-                        break;
-                    case 16:
-                        break;
-                    case 17:
-                        break;
-                    case 18:
-                        break;
-                    case 19:
-                        break;
-                    case 20:
-                        break;
-                    case 21:
-                        break;
-                    case 22:
-                        break;
-                    case 23:
-                        break;
+//                Intent intent0=new Intent();
+//                intent0.setClass(MainActivity.this,details0.class);
+//                startActivity(intent0);
+                for(int i=0;i<=names.length;i++){
 
+                    if(i==position){
+                        String de="There are somedetails for "+i+" .";
+                        Intent intent0=new Intent();
+                        intent0.setClass(MainActivity.this,details0.class);
+                        intent0.putExtra("de",de);
+                        startActivity(intent0);
+
+                    }
                 }
             }
         });
